@@ -139,3 +139,5 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 2026_01_28_gradeup_calibraion/*
+
+.DS_Store

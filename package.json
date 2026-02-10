@@ -4,18 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "slidev 2026_01_26_erc3_webinar/slides.md",
-    "dev:erc3": "slidev 2026_01_26_erc3_webinar/slides.md",
-    "dev:gradeup": "slidev 2026_01_28_gradeup_calibraion/slides.md",
-    "build": "slidev build 2026_01_26_erc3_webinar/slides.md",
-    "export": "slidev export 2026_01_26_erc3_webinar/slides.md"
+    "dev": "bunx slidev 2026_02_06_OpenClaw/slides.md",
+    "dev:openclaw": "bunx slidev 2026_02_06_OpenClaw/slides.md",
+    "dev:erc3": "bunx slidev 2026_01_26_erc3_webinar/slides.md",
+    "dev:gradeup": "bunx slidev 2026_01_28_gradeup_calibraion/slides.md",
+    "build": "bunx slidev build 2026_01_26_erc3_webinar/slides.md",
+    "build:openclaw": "bunx slidev build 2026_02_06_OpenClaw/slides.md",
+    "export": "bunx slidev export 2026_01_26_erc3_webinar/slides.md",
+    "export:openclaw": "bunx slidev export 2026_02_06_OpenClaw/slides.md"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@iconify-json/logos": "^1.2.10",
     "@slidev/cli": "^0.47.5",
-    "@slidev/theme-default": "^0.24.0"
+    "@slidev/theme-default": "^0.24.0",
+    "slidev-theme-penguin": "^2.3.1"
   },
   "devDependencies": {
     "playwright-chromium": "^1.58.0"

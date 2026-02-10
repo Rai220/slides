@@ -20,13 +20,13 @@ background: ./matrix.jpg
 Создаем агента, входящего в ТОП с нуля с помощью AI-assistant development
 
 <div class="mt-8 text-gray-300">
-7 место из 525 команд • 103 задачи
+7 место • 162 задачи • 360995 запусков агентов
 </div>
 
 </div>
 
 <div class="absolute bottom-8 left-8 flex items-center gap-4 z-10">
-  <img src="krestnikov.png" class="w-16 h-16 rounded-full" />
+  <img src="krestnikov_big.png" class="w-16 h-16 rounded-full" />
   <div class="text-sm text-gray-300">
     <div class="font-semibold text-white">Константин Крестников</div>
     <div>Управляющий директор, Сбер</div>
@@ -39,7 +39,12 @@ background: ./matrix.jpg
 
 # Дисклеймер
 
-Мы будем пользоваться Cursor. Я его оплатил с личной карты и использовал на личном компьютере. Вопросы о том, как использовать его внутри Сбера сегодня обсуждать не будем.
+- Мы будем пользоваться Cursor. Я его оплатил с личной карты и использовал на личном компьютере. Вопросы о том, как использовать его внутри Сбера сегодня обсуждать не будем.
+
+- Вопросы можно задать в чате по ходу воркшопа, я отвечу на них в конце.
+
+- Просьба не задавать вопросы, которые касаются внутренних процессов Сбера и GigaChat.
+Встреча открытая!
 
 ---
 
@@ -147,7 +152,7 @@ background: ./agent_developer.jpg
 - Удалось запустить цикл самоулучшения
 - Агент занял седьмое место
 - Стоимость финального прогона: **$3.62** за 103 задачи
-- <img src="leaderboard.png" alt="Leaderboard" class="h-48 inline-block ml-2"/>
+- <img src="leaderboard.png" alt="Leaderboard" class="h-60 inline-block ml-2"/>
 
 </v-clicks>
 
@@ -221,9 +226,13 @@ background: ./arc_background.jpg
 
 ---
 
-# Архитектура агента
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./arc_background.jpg'); filter: brightness(0.15);"></div>
 
-```mermaid {scale: 0.8}
+<div class="relative z-10 h-full flex flex-col items-center justify-center">
+
+<h1 class="mb-4 text-center">Архитектура агента</h1>
+
+```mermaid {scale: 0.85, theme: 'dark'}
 flowchart TD
     Start((Start)) --> Agent[Agent<br/>LLM]
     Agent -.-> Tools[Tools<br/>24 endpoints]
@@ -236,6 +245,8 @@ flowchart TD
     Critic --> Agent
     Agent -.-> End((End))
 ```
+
+</div>
 
 ---
 
@@ -319,7 +330,6 @@ Win & Fail
 
 ---
 layout: cover
-background: ./pinguin.png
 ---
 
 # Fail
@@ -434,6 +444,29 @@ layout: cover
 7. Формируем AGENTS.md – агент для участия в соревновании в рамках ERC3. Он получает задачи и должен их решать. При разработке учитывай, что задачи в будущем будут заменены, поэтому не используй жесткую привязку к конкретным значениям, чтобы избежать оверфита
 8. Запускаем непрерывный цикл улучшения
 
+---
+
+# MCP сервер langchain-gigachat
+
+Настройка в Cursor: `~/.cursor/mcp.json`
+
+```json
+{
+  "mcpServers": {
+    "docs-langchain": {
+      "url": "https://docs.langchain.com/mcp"
+    }
+  }
+}
+```
+
+<div class="mt-6 text-gray-400 text-sm">
+
+- MCP (Model Context Protocol) позволяет подключать внешние источники данных к AI-ассистенту
+- Сервер `docs-langchain` предоставляет актуальную документацию LangChain прямо в контексте Cursor
+- После настройки Cursor автоматически получает доступ к документации при работе с кодом
+
+</div>
 
 ---
 layout: cover
@@ -459,7 +492,7 @@ background: ./final_background.jpg
   </div>
 
   <div class="flex flex-col items-center text-center">
-    <img src="krestnikov.png" class="w-24 h-24 rounded-full mb-3" />
+    <img src="krestnikov_big.png" class="w-24 h-24 rounded-full mb-3" />
     <div class="font-semibold text-white">Константин Крестников</div>
     <div class="text-sm text-gray-400">Управляющий директор, Сбер</div>
     <div class="text-sm text-gray-400">Лид команды GigaChain</div>
