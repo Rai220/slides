@@ -791,29 +791,75 @@ mitmproxy \
 </div>
 
 ---
+layout: cover
+---
+
+# Личный опыт
+
+### Когда OpenClaw сломался — чиним через Cursor + SSH
+
+---
+
+# Чиним OpenClaw через Cursor + SSH
+
+<div class="grid grid-cols-2 gap-8 mt-4 items-center">
+
+<div>
+
+<v-clicks>
+
+- OpenClaw крутится на удалённом сервере 24/7
+- Что-то пошло не так — агент перестал отвечать
+- **Открываем Cursor → SSH к серверу → читаем логи → чиним**
+- AI-агент чинит AI-агента — мета-уровень рекурсии
+
+</v-clicks>
+
+</div>
+
+<div class="flex flex-col items-center">
+  <img src="cuckcoding-meme.png" class="rounded-lg shadow-lg border border-white/10 max-h-72" />
+  <div class="mt-2 text-xs text-gray-500">r/ClaudeAI</div>
+</div>
+
+</div>
+
+<div v-click class="mt-4 text-sm text-gray-400">
+
+**Итого**: SSH + Cursor + хороший промпт = починка за минуты, а не за часы ручного дебага.
+
+</div>
+
+---
 
 # Спасибо за внимание!
 
 <div class="text-gray-400 mb-8">Готов ответить на вопросы</div>
 
-<div class="grid grid-cols-3 gap-8 items-center">
+<div class="grid grid-cols-4 gap-6 items-center">
 
   <div class="flex flex-col items-center">
-    <img src="/qr_robofuture.png" alt="QR Robofuture" class="w-32 h-32 rounded-lg" />
-    <div class="mt-3 text-emerald-400 font-semibold">@Robofuture</div>
+    <img src="/qr_lex491.png" alt="QR Lex Fridman #491" class="w-28 h-28 rounded-lg" />
+    <div class="mt-3 text-emerald-400 font-semibold text-sm">Lex #491</div>
+    <div class="text-xs text-gray-500">Интервью на YouTube</div>
+  </div>
+
+  <div class="flex flex-col items-center">
+    <img src="/qr_robofuture.png" alt="QR Robofuture" class="w-28 h-28 rounded-lg" />
+    <div class="mt-3 text-emerald-400 font-semibold text-sm">@Robofuture</div>
     <div class="text-xs text-gray-500">Telegram про ИИ</div>
   </div>
 
   <div class="flex flex-col items-center text-center">
-    <img src="krestnikov_big.png" class="w-24 h-24 rounded-full mb-3" />
-    <div class="font-semibold text-white">Константин Крестников</div>
-    <div class="text-sm text-gray-400">Управляющий директор, Сбер</div>
-    <div class="text-sm text-gray-400">Лид команды GigaChain</div>
+    <img src="krestnikov_big.png" class="w-20 h-20 rounded-full mb-3" />
+    <div class="font-semibold text-white text-sm">Константин Крестников</div>
+    <div class="text-xs text-gray-400">Управляющий директор, Сбер</div>
+    <div class="text-xs text-gray-400">Лид команды GigaChain</div>
   </div>
 
   <div class="flex flex-col items-center">
-    <img src="/qr_github.png" alt="QR GitHub" class="w-32 h-32 rounded-lg" />
-    <div class="mt-3 text-emerald-400 font-semibold">GigaChain</div>
+    <img src="/qr_github.png" alt="QR GitHub" class="w-28 h-28 rounded-lg" />
+    <div class="mt-3 text-emerald-400 font-semibold text-sm">GigaChain</div>
     <div class="text-xs text-gray-500">GitHub</div>
   </div>
 
