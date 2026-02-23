@@ -83,6 +83,10 @@ layout: cover
 
 </v-clicks>
 
+<div v-click class="mt-3 flex justify-center">
+  <img src="openclaw-name-meme.jpg" class="h-40 rounded-lg shadow-lg border border-white/10" />
+</div>
+
 <div class="mt-2 text-xs text-gray-400">
 <a href="https://openclaw.ai/blog/introducing-openclaw" target="_blank">openclaw.ai/blog/introducing-openclaw</a> •
 <a href="https://lexfridman.com/peter-steinberger-transcript" target="_blank">Lex Fridman #491</a>
