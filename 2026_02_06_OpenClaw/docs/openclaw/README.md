@@ -19,6 +19,10 @@
   Источник: `https://openclaw.ai/blog/virustotal-partnership`  
   Локальный конспект: `posts/2026-02-07-virustotal-partnership.md`
 
+- **2026‑02‑23 — OpenClaw YouTube видео**  
+  Источник: `https://www.youtube.com/watch?v=YFjfBk8HI5o`  
+  Локальная заметка: `posts/2026-02-23-youtube-openclaw-video.md`
+
 ## Что автор сам писал (выжимка)
 
 - **Про происхождение проекта**: “weekend project” → очень быстрый рост (звёзды GitHub/трафик), затем несколько переименований.
