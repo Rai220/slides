@@ -10,7 +10,7 @@ mdc: true
 transition: slide-left
 ---
 
-<div class="flex flex-col justify-center h-full">
+<div class="flex flex-col justify-center h-full pr-64">
 
 # OpenClaw 🦀
 
@@ -20,8 +20,8 @@ transition: slide-left
 Open-source персональный AI-агент на вашем устройстве
 </div>
 
-<div class="mt-2 text-xs text-gray-500">
-Peter Steinberger, создатель OpenClaw — <a href="https://www.youtube.com/watch?v=YFjfBk8HI5o" target="_blank">интервью у Lex Fridman #491</a>
+<div class="mt-2 text-sm text-gray-400">
+По материалам <a href="https://www.youtube.com/watch?v=YFjfBk8HI5o" target="_blank" class="text-blue-400 hover:underline">интервью Lex Fridman #491</a> с Peter Steinberger, создателем OpenClaw
 </div>
 
 <div class="mt-8 text-sm text-gray-500">
@@ -29,6 +29,8 @@ Peter Steinberger, создатель OpenClaw — <a href="https://www.youtube.
 </div>
 
 </div>
+
+<img src="lobster_interview.png" class="absolute right-12 top-1/2 -translate-y-1/2 w-52 rounded-xl shadow-lg" />
 
 <div class="absolute bottom-8 left-8 flex items-center gap-4">
   <img src="/krestnikov_big.png" class="w-16 h-16 rounded-full" />
@@ -105,8 +107,10 @@ layout: cover
 - Реактивный — ждёт ваш запрос
 - Данные на серверах провайдера
 - Нет доступа к вашим системам
-- Память ограничена сессией
+- Память как дополнение к сессии
 - Один канал общения
+- Нет общего контекста
+- Нет скилов
 
 </div>
 
@@ -114,11 +118,12 @@ layout: cover
 
 ### OpenClaw
 
+- "Свой" компьютер - shell, бразуер, файлы, почта
+- Развитая память в основе решения
 - **Проактивный** — cron, hooks, heartbeats
-- Данные **на вашем устройстве**
-- **Shell, браузер, файлы, email**
-- Персистентная память (MEMORY.md)
-- Один мозг — **13+ каналов**
+- Разные каналаы общения, работа "на бегу" с контекстом
+- Единый контекст всех задач (пространство файлов)
+- Skill-based решение
 
 </div>
 
@@ -304,15 +309,15 @@ layout: cover
 
 ---
 
-# Почему НЕ ReAct?
+# Современный взгляд на ReAct
 
-<div class="grid grid-cols-2 gap-8 mt-4">
+<div class="grid grid-cols-2 gap-4 mt-3">
 
-<div class="p-4 bg-gray-800/50 rounded-lg">
+<div class="p-3 bg-gray-800/50 rounded-lg">
 
 ### ReAct (Reasoning + Acting)
 
-<div class="mt-2 text-sm text-gray-300">
+<div class="mt-1 text-sm text-gray-300">
 
 Явный шаг рассуждения (CoT) перед каждым действием. Управляется промптом или фреймворком.
 
@@ -323,11 +328,11 @@ Think → Act → Observe → Think → ...
 </div>
 </div>
 
-<div class="p-4 bg-blue-900/30 rounded-lg border border-blue-500/30">
+<div class="p-3 bg-blue-900/30 rounded-lg border border-blue-500/30">
 
 ### OpenClaw (Tool-Calling Loop)
 
-<div class="mt-2 text-sm text-gray-300">
+<div class="mt-1 text-sm text-gray-300">
 
 Модель **сама решает**, когда вызвать тул. Reasoning — внутри модели. Никакой внешней оркестрации.
 
@@ -340,16 +345,15 @@ Message → LLM + Tools → Response
 
 </div>
 
-<div class="mt-4 text-sm">
-
-**«Agentic Trap»**: новичок пишет простые промпты → усложняет до 8 агентов и оркестраторов → возвращается к простым промптам. Элитный уровень — снова zen и простота.
-
-</div>
-
-<div class="mt-2 text-xs text-gray-400">
-
-> «Те, кто пытаются использовать оркестраторы — теряют стиль, любовь, человеческое прикосновение.» — <a href="https://www.youtube.com/watch?v=YFjfBk8HI5o&t=4849" target="_blank">Lex #491, 01:20:49</a>
-
+<div class="grid grid-cols-[auto_1fr] gap-4 mt-3 items-center">
+  <img src="architecture-meme.png" class="h-[22vh] object-contain rounded-lg" />
+  <div>
+    <div class="text-xs leading-snug"><b>«Agentic Trap»</b>: новичок пишет простые промпты → усложняет до 8 агентов и оркестраторов → возвращается к простым промптам.</div>
+    <div class="mt-2 text-[11px] text-gray-400 leading-snug">
+      «Те, кто пытаются использовать оркестраторы — теряют стиль, любовь, человеческое прикосновение.» —
+      <a href="https://www.youtube.com/watch?v=YFjfBk8HI5o&t=4849" target="_blank">Lex #491, 01:20:49</a>
+    </div>
+  </div>
 </div>
 
 ---
@@ -717,30 +721,6 @@ Steinberger: «Я спросил агента: "Видишь эти файлы? 
 
 ---
 
-# Безопасность: эшелонированная защита
-
-<v-clicks>
-
-- **Prompt injection — нерешённая проблема индустрии**. Автор это признаёт открыто
-- **Умнее модель → меньше поверхность атаки**: «Не используйте дешёвые модели — они очень доверчивы»
-- **VirusTotal Partnership** — все skills в ClawHub проверяются AI-сканером
-- **Sandbox** — Docker-изоляция, allow/deny lists
-- Нанял security-исследователя из комьюнити: тот прислал не только баг, но и PR
-- **Формальная верификация** — TLA+ модели безопасности (community-driven)
-- **AI психоз** — автор предупреждает: «Общество должно научиться критическому мышлению в эпоху AI»
-
-</v-clicks>
-
-<div class="mt-4 text-xs text-gray-400">
-
-> «Чем умнее модель, тем устойчивее она к атакам.» — <a href="https://www.youtube.com/watch?v=YFjfBk8HI5o&t=3404" target="_blank">Lex #491, 00:56:44</a><br/>
-<a href="https://openclaw.ai/blog/virustotal-partnership" target="_blank">VirusTotal Partnership</a> •
-<a href="https://trust.openclaw.ai/" target="_blank">Trust Program</a>
-
-</div>
-
----
-
 # Будущее: агент → операционная система
 
 <v-clicks>
@@ -773,7 +753,7 @@ layout: cover
 
 # OpenClaw + GigaChat / Ollama
 
-<div class="grid grid-cols-2 gap-8 mt-4">
+<div class="grid grid-cols-3 gap-4 mt-2">
 
 <div>
 
@@ -799,7 +779,7 @@ layout: cover
 
 <div>
 
-### Ollama (полностью локально)
+### Ollama (локально)
 
 ```json
 {
@@ -819,9 +799,13 @@ layout: cover
 
 </div>
 
+<div class="flex flex-col items-center justify-center">
+  <img src="gigachat-crab.png" class="rounded-lg shadow-lg border border-white/10 max-h-56 object-contain" />
 </div>
 
-<div class="mt-4 text-sm text-gray-400">
+</div>
+
+<div class="mt-2 text-sm text-gray-400">
 
 Любой **OpenAI-совместимый API** подключается одинаково. Model failover: если один недоступен — автопереключение.<br/>
 ⚠️ Для tool calling используйте модели ≥ 70B. Слабые модели уязвимы к prompt injection.
@@ -995,58 +979,86 @@ layout: cover
 
 # Рекомендации фильмов через КиноНавигатор
 
-<div class="grid grid-cols-2 gap-8 mt-4 items-start">
+<div class="grid grid-cols-[auto_1fr] gap-6 mt-2 items-start">
+
+<div class="flex-shrink-0">
+  <img src="kinonavigator-telegram-chat.png" class="rounded-lg shadow-lg border border-white/10 h-96" />
+</div>
 
 <div>
 
-<v-clicks>
+<div class="text-xs text-gray-400 mb-2">
 
-- **КиноНавигатор** (<a href="https://kinonavigator.ru" target="_blank">kinonavigator.ru</a>) — сервис персональных рекомендаций фильмов
-- Анализирует оценки, жанры, настроение → подбирает фильм
-- OpenClaw + **browser tool** → агент сам заходит на сайт, парсит подборки
-- Агент помнит, что я уже смотрел (MEMORY.md) — не предлагает повторно
-- Результат приходит в **Telegram**: «Сегодня вечером посмотри...» + трейлер + где смотреть
-- **Cron** раз в неделю: «Пятничная подборка на выходные»
-
-</v-clicks>
+CSV-выгрузка из <a href="https://kinonavigator.ru" target="_blank">kinonavigator.ru</a> — 370 фильмов с оценками, прогнозами и ссылками на KP/IMDb:
 
 </div>
 
-<div class="p-4 bg-purple-900/30 rounded-lg border border-purple-500/30 text-sm">
-
-**Как это работает:**
+<div class="overflow-auto text-[9px] leading-tight">
 
 ```
-1. Cron (пятница 18:00)
-   → OpenClaw просыпается
-
-2. memory_search("фильмы", "смотрел")
-   → загружает историю просмотров
-
-3. browser → kinonavigator.ru
-   → парсит рекомендации по профилю
-
-4. Фильтрует уже просмотренные
-
-5. message → Telegram
-   → «🎬 На выходные: ...»
+Тип;Название;Название исходное;Год;url;Прогноз;Оценка;Дата
+movie;Приключения пингвиненка Лоло;;1986;.../24930361;7,17;10;2011-03-21
+movie;Назад в будущее;Back to the Future;1985;.../197724;9,74;10;2012-08-23
+movie;Престиж;The Prestige;2006;.../220357;8,72;10;2012-08-23
+movie;Крестный отец;The Godfather;1972;.../198173;6,2;1;2012-08-23
+movie;Аватар;Avatar;2009;.../1691979;7,73;10;2012-09-24
+movie;Живая сталь;Real Steel;2011;.../2680092;7,0;5;2012-09-24
+movie;Исходный код;Source Code;2011;.../2584053;7,63;8;2012-09-24
+...
 ```
 
 </div>
 
+<div v-click class="mt-2 grid grid-cols-2 gap-3 text-xs">
+
+<div class="p-2 bg-green-900/30 rounded-lg border border-green-500/30">
+
+**Прогноз сервиса** vs **моя оценка** — агент видит расхождения вкусов
+
 </div>
 
-<div v-click class="mt-4 text-sm text-gray-400">
+<div class="p-2 bg-blue-900/30 rounded-lg border border-blue-500/30">
 
-**Суть**: агент знает ваш вкус, умеет ходить в браузер и сам напоминает — вы просто получаете готовую подборку.
+Агент помнит историю просмотров — **не предлагает повторно**
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
 ---
 
-# Работа с презентациями
+# Работа с презентациями через Slidev
 
-<!-- TODO: заполнить содержимым -->
+<div class="text-sm mt-1">
+
+- **Slidev** — презентации как код на Markdown. Хранение в **Git** — версионирование, диффы, PR
+- Основной инструмент — **Cursor**: пишу слайды, вставляю картинки, запускаю превью — всё в одном окне
+- Через **OpenClaw** тоже удобно: скидываю картинку или текст в Telegram — агент сам добавляет на нужный слайд
+
+</div>
+
+<div class="grid grid-cols-2 gap-4 mt-2">
+  <img src="slides-openclaw-chat.png" class="rounded-lg shadow-lg border border-white/10 max-h-64 object-contain" />
+  <img src="slides-openclaw-preview.png" class="rounded-lg shadow-lg border border-white/10 max-h-64 object-contain" />
+</div>
+
+<div class="mt-1 grid grid-cols-2 gap-4 text-xs text-gray-400">
+  <div>Отправил картинку в Telegram — агент добавил на слайд</div>
+  <div>Агент запустил Slidev и прислал превью</div>
+</div>
+
+---
+
+# Планирование поездок через агента
+
+<div class="grid grid-cols-2 gap-4 -mt-30 h-[66vh]">
+  <img src="openclaw-trip-chat.png" class="rounded-lg shadow-lg border border-white/10 w-full h-full object-contain" />
+  <img src="openclaw-trip-diff.png" class="rounded-lg shadow-lg border border-white/10 w-full h-full object-contain" />
+</div>
 
 ---
 
