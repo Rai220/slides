@@ -10,6 +10,9 @@ mdc: true
 transition: slide-left
 ---
 
+<img src="background.png" class="absolute inset-0 w-full h-full object-cover" style="z-index:-2" />
+<div class="absolute inset-0 bg-black/60" style="z-index:-1" />
+
 <div class="flex flex-col justify-center h-full pr-64">
 
 # OpenClaw 🦀
@@ -853,49 +856,6 @@ layout: cover
 
 </div>
 
----
-
-# Трассировка через mitmproxy
-
-<div class="grid grid-cols-2 gap-6 mt-4 text-sm">
-
-<div>
-
-**Зачем:**
-
-- Увидеть полный системный промпт
-- Увидеть все 23 тула с JSON-schema
-- Понять логику tool calls
-- Отладить кастомные провайдеры
-- Измерить latency и token usage
-
-</div>
-
-<div>
-
-**Как:**
-
-```bash
-mitmproxy \
-  --mode reverse:https://api.example.com \
-  --listen-port 8080
-```
-
-В `openclaw.json`:
-
-```json
-{ "baseUrl": "http://localhost:8080/api/v1" }
-```
-
-</div>
-
-</div>
-
-<div class="mt-4 text-sm text-gray-400">
-
-Все запросы к LLM проходят через прокси. GUI: `mitmweb` на порту 8081.
-
-</div>
 
 ---
 
@@ -1099,6 +1059,46 @@ movie;Исходный код;Source Code;2011;.../2584053;7,63;8;2012-09-24
 <div class="grid grid-cols-2 gap-4 -mt-30 h-[66vh]">
   <img src="openclaw-trip-chat.png" class="rounded-lg shadow-lg border border-white/10 w-full h-full object-contain" />
   <img src="openclaw-trip-diff.png" class="rounded-lg shadow-lg border border-white/10 w-full h-full object-contain" />
+</div>
+
+---
+
+# Персонажи: локальный lipsync
+
+<div class="grid grid-cols-[1fr_2fr] gap-6 mt-2 items-start">
+
+<div class="flex flex-col items-center gap-3">
+  <img src="char-sbercat.png" class="w-28 h-28 rounded-full shadow-lg border border-white/10" />
+  <img src="char-anime-green.png" class="w-28 h-28 rounded-full shadow-lg border border-white/10" />
+  <img src="char-rizzi.png" class="w-28 h-28 rounded-full shadow-lg border border-white/10" />
+</div>
+
+<div class="text-sm">
+
+**Амплитудная синхронизация губ** (`scripts/make_talking_circle_video.py`):
+
+<v-clicks>
+
+- Аудио через **ffmpeg** → mono WAV 16 kHz
+- По каждому кадру считается **RMS громкости** в окне ~35 ms
+- По порогам выбирается кадр рта:
+  - `neutral` — тихо (< amp-low)
+  - `slight` — средне
+  - `wide` — громко (>= amp-high)
+- **Моргание** отдельно: `blink-start`, `blink-every`, `blink-duration-frames`; если ролик короткий — принудительно хотя бы один blink
+
+</v-clicks>
+
+<div v-click class="mt-3 p-2 bg-gray-800/50 rounded-lg text-xs">
+
+**Стек**: Python (Pillow, numpy, wave) + ffmpeg + **ElevenLabs API** (TTS)
+
+Это амплитудная синхронизация: громкость → степень открытия рта, без разбора слов/фонем.
+
+</div>
+
+</div>
+
 </div>
 
 ---
