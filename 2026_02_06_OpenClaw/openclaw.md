@@ -833,24 +833,29 @@ movie;Исходный код;Source Code;2011;.../2584053;7,63;8;2012-09-24
 
 </div>
 
-<div class="grid grid-cols-2 gap-4 mt-2">
-  <img src="slides-openclaw-chat.png" class="rounded-lg shadow-lg border border-white/10 max-h-64 object-contain" />
-  <img src="slides-openclaw-preview.png" class="rounded-lg shadow-lg border border-white/10 max-h-64 object-contain" />
-</div>
+<img src="slides-openclaw-chat.png" class="rounded-lg shadow-lg border border-white/10 max-h-52 object-contain mt-2" />
 
-<div class="mt-1 grid grid-cols-2 gap-4 text-xs text-gray-400">
-  <div>Отправил картинку в Telegram - агент добавил на слайд</div>
-  <div>Агент запустил Slidev и прислал превью</div>
-</div>
+<div class="text-xs text-gray-400 mt-1">Отправил картинку в Telegram - агент добавил на слайд</div>
+
+---
+
+# Работа с презентациями через Slidev
+
+<img src="slides-openclaw-preview.png" class="rounded-lg shadow-lg border border-white/10 max-h-80 object-contain mt-2" />
+
+<div class="text-xs text-gray-400 mt-1">Агент запустил Slidev и прислал превью</div>
 
 ---
 
 # Планирование поездок через агента
 
-<div class="grid grid-cols-2 gap-4 -mt-30 h-[66vh]">
-  <img src="openclaw-trip-chat.png" class="rounded-lg shadow-lg border border-white/10 w-full h-full object-contain" />
-  <img src="openclaw-trip-diff.png" class="rounded-lg shadow-lg border border-white/10 w-full h-full object-contain" />
-</div>
+<img src="openclaw-trip-chat.png" class="rounded-lg shadow-lg border border-white/10 max-h-96 object-contain mx-auto" />
+
+---
+
+# Планирование поездок через агента
+
+<img src="openclaw-trip-diff.png" class="rounded-lg shadow-lg border border-white/10 max-h-96 object-contain mx-auto" />
 
 ---
 
