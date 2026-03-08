@@ -26,6 +26,29 @@ transition: slide-left
 
 ---
 
+# Важное замечание перед демо
+
+<div class="mt-3 grid grid-cols-[1.1fr_0.9fr] gap-6 items-start">
+
+<div>
+
+<v-clicks>
+
+- Сегодня в демо используем бота в режиме `low` или `off` reasoning - так ответы приходят быстрее
+- Из-за этого часть кейсов может сработать неидеально или не сработать с первого раза
+- В обычной работе я чаще выбираю `high`, `xhigh` или `auto`
+- В этих режимах ответы занимают больше времени, но агент рассуждает лучше и обычно надежнее доводит задачу до результата
+
+</v-clicks>
+
+</div>
+
+<img src="think_level.jpg" class="rounded-lg border border-white/10 max-h-96 mx-auto" />
+
+</div>
+
+---
+
 # План второй части
 
 <v-clicks>
@@ -186,6 +209,27 @@ ssh \
 
 ---
 
+# Общий подход к работе
+
+<div class="mt-4 text-gray-300">
+Как обычно выстраивается практический процесс:
+</div>
+
+<v-clicks>
+
+- работа идет в репозиториях на GitHub
+- под задачу создается структура файлов, куда можно регулярно делать context offloading
+- в Cursor IDE и Claude Code выполняются сложные задачи
+- через OpenClaw удобно вносить небольшие правки на бегу и запрашивать информацию
+
+</v-clicks>
+
+<div class="mt-5 text-sm text-gray-500">
+Идея: тяжелую работу делаем в полноценных IDE, а OpenClaw используем как быстрый рабочий интерфейс.
+</div>
+
+---
+
 # Кейс 1: туризм и поездки
 
 <div class="mt-4 text-gray-300">
@@ -237,34 +281,143 @@ ssh \
 
 ---
 
-# Кейс 1: ценность для пользователя
+# Кейс 1: пример репозитория
 
-<div class="grid grid-cols-3 gap-4 mt-6 text-sm">
+<div class="grid grid-cols-[1.6fr_0.9fr] gap-8 items-center mt-6">
 
-<div class="p-4 rounded-lg bg-blue-900/25 border border-blue-500/30">
+<div>
 
-### Скорость
+<div class="text-gray-300 text-sm mb-3">
+Пример репозитория для планирования поездок и командировок:
+</div>
 
-Данные по поездке собираются за минуты, а не по кускам из разных чатов.
+<div class="text-lg leading-snug">
+<a
+  href="https://github.com/Rai220/my_travel_demo"
+  target="_blank"
+  class="text-cyan-400 hover:text-cyan-300 underline"
+>
+  github.com/Rai220/my_travel_demo
+</a>
+</div>
+
+<div class="mt-5 rounded-lg border border-amber-500/30 bg-amber-900/20 p-4 text-sm text-amber-100">
+Все данные в этом репозитории тестовые и не настоящие. Имена, документы, даты, маршруты и бронирования приведены только для демонстрации.
+</div>
 
 </div>
 
-<div class="p-4 rounded-lg bg-emerald-900/25 border border-emerald-500/30">
+<div class="flex flex-col items-center">
 
-### Надежность
+<img
+  src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fgithub.com%2FRai220%2Fmy_travel_demo"
+  alt="QR-код на репозиторий с примером планирования поездок"
+  class="w-44 h-44 rounded-lg bg-white p-2"
+/>
 
-Один источник правды в репозитории, меньше потерь контекста.
+<div class="mt-3 text-xs text-gray-400 text-center">
+QR-код на пример репозитория
+</div>
 
 </div>
 
-<div class="p-4 rounded-lg bg-amber-900/25 border border-amber-500/30">
+</div>
 
-### Контроль
+---
 
-Все изменения версионируются, можно откатить и проверить историю.
+# Кейс 1: структура репозитория
+
+<div class="grid grid-cols-2 gap-6 mt-4 text-sm">
+
+<div class="p-4 rounded-lg bg-gray-800/60">
+
+### Что лежит в корне
+
+```text
+my_travel_demo/
+├─ AGENTS.md
+├─ PERSONS.md
+├─ signatures/
+├─ TEMPLATE/
+├─ 2026_03_Командировка_Сочи_SnowBase/
+├─ 2026_06_Армения/
+└─ 2026_10_Португалия_Солнечное_затмение/
+```
+
+- `AGENTS.md` - правила и порядок работы с поездками
+- `PERSONS.md` - участники, документы, контакты
+- `signatures/` - подписи для документов
+- отдельные папки - конкретные поездки
 
 </div>
 
+<div class="p-4 rounded-lg bg-gray-800/60">
+
+### Из чего состоит шаблон поездки
+
+```text
+TEMPLATE/
+├─ CORE.md
+├─ BOOKINGS.md
+├─ CHECKLIST.md
+├─ MOVEMENTS.md
+├─ PROGRAM.md
+└─ docs/
+```
+
+- `CORE.md` - вводные, даты, состав, ограничения
+- `BOOKINGS.md` - брони, оплаты, статусы, ссылки
+- `CHECKLIST.md` - задачи подготовки
+- `MOVEMENTS.md` - сегменты маршрута и билеты
+- `PROGRAM.md` - план по дням или программа события
+- `docs/` - сканы, билеты, ваучеры, подтверждения
+
+</div>
+
+</div>
+
+<div class="mt-4 text-sm text-gray-400">
+Шаблон копируется под новую поездку и превращается в отдельную папку-источник правды по маршруту, документам и бронированиям.
+</div>
+
+---
+
+# Кейс 1: пример - подпись туристических документов
+
+<div class="grid grid-cols-2 gap-6 mt-4 text-sm">
+
+<div class="p-4 rounded-lg bg-gray-800/60">
+
+### Что просим у агента
+
+- "Подготовь согласие на выезд"
+- "Подставь данные туриста и маршрута"
+- "Подпиши PDF эталонной подписью"
+- "Сохрани результат в папку поездки"
+
+</div>
+
+<div class="p-4 rounded-lg bg-gray-800/60">
+
+### Что использует агент
+
+```text
+PERSONS.md
+2026_06_Армения/docs/
+signatures/
+```
+
+- данные туриста и контакты из `PERSONS.md`
+- шаблон документа из папки конкретной поездки
+- файл подписи из `signatures/`
+- сохранение результата рядом с исходными документами
+
+</div>
+
+</div>
+
+<div class="mt-4 rounded-lg border border-cyan-500/30 bg-cyan-900/15 p-4 text-sm text-cyan-100">
+Пример результата: заполненное согласие, анкета на визу или ваучер собираются из данных поездки и подписываются без ручного копирования реквизитов.
 </div>
 
 ---
@@ -287,7 +440,45 @@ ssh \
 
 ---
 
-# Кейс 2: пример пайплайна
+# Кейс 2: что такое Slidev
+
+<div class="mt-6 grid grid-cols-[1.6fr_0.9fr] gap-8 items-start">
+
+<div>
+
+<div class="text-2xl font-semibold text-emerald-300">
+Использую <a href="https://sli.dev/" target="_blank">Slidev</a>
+</div>
+
+<div class="mt-4 text-gray-300 leading-relaxed">
+Slidev - это инструмент для создания презентаций для разработчиков на базе Markdown, Vite и Vue. Слайды удобно хранить в репозитории, быстро править как код, дополнять компонентами и экспортировать в PDF.
+</div>
+
+<div class="mt-4 text-sm text-gray-400">
+Сайт: <a href="https://sli.dev/" target="_blank">https://sli.dev/</a>
+</div>
+
+</div>
+
+<div class="flex flex-col items-center">
+
+<img
+  src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fsli.dev%2F"
+  alt="QR-код на сайт Slidev"
+  class="w-44 h-44 rounded-lg bg-white p-2"
+/>
+
+<div class="mt-3 text-xs text-gray-400 text-center">
+QR-код на Slidev
+</div>
+
+</div>
+
+</div>
+
+---
+
+# Кейс 2: репозитарий
 
 ```bash
 cd /root/.openclaw/workspace/slides
@@ -465,23 +656,6 @@ git add -A && git commit -m "slides: update deck" && git push
 <div class="mt-6 text-sm text-gray-400">
 Польза: меньше ручных кликов и ниже риск пропустить обязательные поля.
 </div>
-
----
-
-# Кейс 6: контент-пайплайн
-
-<div class="mt-4 text-gray-300">
-Работа с Telegram и сообществами:
-</div>
-
-<v-clicks>
-
-- проверка новых постов и комментариев в Boltbook
-- подготовка и рерайт драфтов под нужный стиль
-- ведение репозитория постов (sync -> edit -> preview -> publish)
-- публикация только после явного подтверждения
-
-</v-clicks>
 
 ---
 
