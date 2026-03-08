@@ -382,6 +382,49 @@ TEMPLATE/
 
 ---
 
+# Кейс 1: пример изменения поездки
+
+<div class="p-4 rounded-lg bg-gray-800/60 mt-4 text-sm">
+
+### Сценарий изменений
+
+1. Шаг 1 - показали Cursor ссылку на страницу с описанием доклада
+2. Шаг 2 - агент вытащил новые детали события со страницы
+3. Шаг 3 - изменения нужно внести в файлы поездки без ручного копирования
+
+### Что именно добавилось
+
+- дата и время доклада: `21 марта, 14:30-16:30`
+- локация: зал `Запад`
+- источник обновления: страница события Snow BASE
+- синхронизация с `CORE.md`, `PROGRAM.md` и `BOOKINGS.md`
+
+</div>
+
+<div class="mt-4 rounded-lg border border-cyan-500/30 bg-cyan-900/15 p-3 text-cyan-100 text-sm">
+Результат для агента: появилось конкретное изменение в поездке, которое можно сразу оформить как diff в репозитории.
+</div>
+
+---
+
+# Кейс 1: шаг 1 - страница события
+
+<img
+  src="snowbase_info_png.png"
+  alt="Страница Snow BASE с описанием доклада"
+  class="mt-4 mx-auto rounded-lg border border-white/10 shadow-lg max-h-[78%]"
+/>
+
+---
+
+<img
+  src="cursor_travel_example.png"
+  alt="Скрин Cursor после передачи ссылки на событие"
+  class="mx-auto h-[78vh] w-auto rounded-lg border border-white/10 shadow-lg"
+/>
+
+---
+
 # Кейс 1: пример - подпись туристических документов
 
 <div class="grid grid-cols-2 gap-6 mt-4 text-sm">
@@ -419,6 +462,64 @@ signatures/
 
 <div class="mt-4 rounded-lg border border-cyan-500/30 bg-cyan-900/15 p-4 text-sm text-cyan-100">
 Пример результата: заполненное согласие, анкета на визу или ваучер собираются из данных поездки и подписываются без ручного копирования реквизитов.
+</div>
+
+---
+
+<div class="grid grid-cols-[0.78fr_1.22fr] gap-4 items-start pt-1">
+
+<div class="rounded-lg border border-amber-500/30 bg-amber-900/15 p-3 text-sm leading-snug">
+  <div class="text-amber-300 font-semibold">14 документов на подпись</div>
+  <div class="mt-2 text-gray-200">
+    Ребенок подался на хакатон и принес пачку согласий: участие, обработка данных, фото, питание и другие формальности.
+  </div>
+  <div class="mt-3 text-xs text-gray-400">
+    Без автоматизации это долгая ручная серия: открыть PDF, найти поля, проставить галочки, вбить данные, расписаться и повторить все много раз.
+  </div>
+</div>
+
+<div class="flex justify-center">
+  <img
+    src="unsigned_document.png"
+    alt="Неподписанный документ для хакатона"
+    class="mt-1 mx-auto rounded-lg border border-white/10 max-h-[47vh] w-auto"
+  />
+</div>
+
+</div>
+
+---
+
+<div class="mt-2 text-sm text-gray-300 leading-snug">
+Формулировка в Telegram получилась очень бытовой и без специальной подготовки:
+</div>
+
+<img
+  src="dialog_ask_to_sign.png"
+  alt="Диалог с агентом в Telegram про подписание документа"
+  class="mt-2 mx-auto rounded-lg border border-white/10 max-h-[44vh] w-auto"
+/>
+
+<div class="mt-2 text-xs text-gray-400 leading-snug">
+Агенту достаточно дать файл и короткую инструкцию: заполнить реальными данными, поставить нужные галочки и подписать демо-подписью.
+</div>
+
+---
+
+<div class="grid grid-cols-[0.78fr_1.22fr] gap-4 items-start pt-1">
+
+<div class="rounded-lg border border-cyan-500/30 bg-cyan-900/15 p-3 text-sm text-cyan-100 leading-snug">
+Практическая ценность тут очень понятная: когда таких документов не один, а 14, агент снимает рутинную механику и экономит массу времени на однотипных действиях.
+</div>
+
+<div class="flex justify-center">
+  <img
+    src="signed_document.png"
+    alt="Подписанный документ после обработки агентом"
+    class="mx-auto rounded-lg border border-white/10 max-h-[47vh] w-auto"
+  />
+</div>
+
 </div>
 
 ---
