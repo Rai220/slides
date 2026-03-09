@@ -53,6 +53,7 @@ transition: slide-left
 
 <v-clicks>
 
+- Короткий рекап первой части
 - **Шаг 0: UI и потребление токенов** - знакомство с интерфейсом OpenClaw
 - Кейс 1: туризм и командировки
 - Кейс 2: работа с презентациями
@@ -63,6 +64,138 @@ transition: slide-left
 - Быстрые кейсы: домены для роутера, генерация медиа
 
 </v-clicks>
+
+---
+
+# Короткий рекап первой части
+
+<div class="mt-4 grid grid-cols-3 gap-4 text-sm">
+
+<div class="p-4 rounded-lg bg-blue-900/25 border border-blue-500/30">
+
+### 1. Запустили OpenClaw
+
+- подготовили сервер
+- настроили агента и каналы
+- сделали первый запуск и живое демо
+
+</div>
+
+<div class="p-4 rounded-lg bg-emerald-900/25 border border-emerald-500/30">
+
+### 2. Разобрали внутренности
+
+- архитектуру простого agentic loop
+- память на Markdown-файлах
+- skills, heartbeat и cron
+
+</div>
+
+<div class="p-4 rounded-lg bg-purple-900/25 border border-purple-500/30">
+
+### 3. Подключили GigaChat
+
+- показал схему через `gpt2giga`
+- попробовали OpenClaw на GigaChat
+- сравнили с OpenAI-совместимым провайдером
+
+</div>
+
+</div>
+
+<div class="mt-5 text-sm text-gray-400">
+Первая часть была про устройство и запуск OpenClaw, а сегодня идем в практические кейсы и рабочие сценарии.
+</div>
+
+---
+
+# Что было основное в первом вебинаре
+
+<v-clicks>
+
+- С нуля подняли сервер на Hetzner и накатили туда OpenClaw
+- Посмотрели, как устроены его архитектура, память, `SOUL.md`, `MEMORY.md`, `HEARTBEAT.md`
+- Обсудили, почему OpenClaw держится на простом tool-calling loop, а не на сложной оркестрации
+- Показали живое демо установки, первого запуска и работы через браузер
+- В конце переключили агента на GigaChat через `gpt2giga` и проверили, что это реально работает
+
+</v-clicks>
+
+<div class="mt-5 p-3 rounded-lg bg-gray-800/60 text-sm text-gray-300">
+Коротко: первая часть ответила на вопрос "что это за агент и как его поднять", а вторая отвечает на вопрос "что с ним делать в реальной жизни".
+</div>
+
+---
+
+# Записи первой части
+
+<div class="grid grid-cols-2 gap-4 mt-4 text-sm">
+
+<div class="p-4 rounded-lg bg-red-900/25 border border-red-500/30 flex items-center gap-4">
+
+<img
+  src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fyoutu.be%2F0TQFhuv1PVA"
+  alt="QR-код на YouTube запись первого вебинара"
+  class="w-24 h-24 rounded-lg bg-white p-2 shrink-0"
+/>
+
+<div>
+<div class="text-white font-semibold">YouTube</div>
+<a href="https://youtu.be/0TQFhuv1PVA" target="_blank">Запускаем и изучаем OpenClaw</a>
+</div>
+
+</div>
+
+<div class="p-4 rounded-lg bg-blue-900/25 border border-blue-500/30 flex items-center gap-4">
+
+<img
+  src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Frutube.ru%2Fvideo%2Fb3e60ebe06377e530db737d6a0db8cdd%2F"
+  alt="QR-код на RuTube запись первого вебинара"
+  class="w-24 h-24 rounded-lg bg-white p-2 shrink-0"
+/>
+
+<div>
+<div class="text-white font-semibold">RuTube</div>
+<a href="https://rutube.ru/video/b3e60ebe06377e530db737d6a0db8cdd/" target="_blank">Запись вебинара</a>
+</div>
+
+</div>
+
+<div class="p-4 rounded-lg bg-sky-900/25 border border-sky-500/30 flex items-center gap-4">
+
+<img
+  src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Ft.me%2Frobofuture%2F129"
+  alt="QR-код на Telegram запись первого вебинара"
+  class="w-24 h-24 rounded-lg bg-white p-2 shrink-0"
+/>
+
+<div>
+<div class="text-white font-semibold">Telegram</div>
+<a href="https://t.me/robofuture/129" target="_blank">Видео в канале RoboFuture</a>
+</div>
+
+</div>
+
+<div class="p-4 rounded-lg bg-emerald-900/25 border border-emerald-500/30 flex items-center gap-4">
+
+<img
+  src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Ft.me%2Frobofuture%2F128"
+  alt="QR-код на слайды первого вебинара"
+  class="w-24 h-24 rounded-lg bg-white p-2 shrink-0"
+/>
+
+<div>
+<div class="text-white font-semibold">Слайды</div>
+<a href="https://t.me/robofuture/128" target="_blank">openclaw.pdf</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="mt-5 text-xs text-gray-400">
+По посту в канале: в первой части были архитектура, память, skills, heartbeat, установка с нуля и подключение к GigaChat.
+</div>
 
 ---
 
@@ -128,9 +261,11 @@ ssh \
 
 # Недельное потребление OpenClaw
 
-<img src="usage_1.png" class="rounded-lg border border-white/10" />
+<div class="overflow-hidden">
+<img src="usage_1.png" class="rounded-lg border border-white/10 h-[55vh]" />
+</div>
 
-<div class="mt-3 text-sm text-gray-400">
+<div class="mt-1 text-xs text-gray-400">
 125.7 млн токенов за неделю - активность по дням, разбивка по типам (input/output/cache), список сессий
 </div>
 
@@ -144,9 +279,11 @@ ssh \
 
 # Потребление на простой чат
 
-<img src="usage_2.png" class="rounded-lg border border-white/10" />
+<div class="overflow-hidden">
+<img src="usage_2.png" class="rounded-lg border border-white/10 h-[56vh]" />
+</div>
 
-<div class="mt-3 text-sm text-gray-400">
+<div class="mt-2 text-xs text-gray-400">
 247.9K токенов на 14 сообщений - system prompt ~31.6K, 21 скилл, 23 инструмента, 8 файлов
 </div>
 
@@ -327,11 +464,11 @@ QR-код на пример репозитория
 
 # Кейс 1: структура репозитория
 
-<div class="grid grid-cols-2 gap-6 mt-4 text-sm">
+<div class="grid grid-cols-2 gap-4 mt-2 text-xs">
 
-<div class="p-4 rounded-lg bg-gray-800/60">
+<div class="p-3 rounded-lg bg-gray-800/60">
 
-### Что лежит в корне
+#### Что лежит в корне
 
 ```text
 my_travel_demo/
@@ -351,9 +488,9 @@ my_travel_demo/
 
 </div>
 
-<div class="p-4 rounded-lg bg-gray-800/60">
+<div class="p-3 rounded-lg bg-gray-800/60">
 
-### Из чего состоит шаблон поездки
+#### Из чего состоит шаблон поездки
 
 ```text
 TEMPLATE/
@@ -376,7 +513,7 @@ TEMPLATE/
 
 </div>
 
-<div class="mt-4 text-sm text-gray-400">
+<div class="mt-2 text-xs text-gray-400">
 Шаблон копируется под новую поездку и превращается в отдельную папку-источник правды по маршруту, документам и бронированиям.
 </div>
 
@@ -407,12 +544,10 @@ TEMPLATE/
 
 ---
 
-# Кейс 1: шаг 1 - страница события
-
 <img
   src="snowbase_info_png.png"
   alt="Страница Snow BASE с описанием доклада"
-  class="mt-4 mx-auto rounded-lg border border-white/10 shadow-lg max-h-[78%]"
+  class="mt-1 mx-auto rounded-lg border border-white/10 shadow-lg max-h-[58vh] max-w-full w-auto object-contain"
 />
 
 ---
@@ -420,12 +555,10 @@ TEMPLATE/
 <img
   src="cursor_travel_example.png"
   alt="Скрин Cursor после передачи ссылки на событие"
-  class="mx-auto h-[78vh] w-auto rounded-lg border border-white/10 shadow-lg"
+  class="mx-auto max-h-[66vh] max-w-full w-auto rounded-lg border border-white/10 shadow-lg object-contain"
 />
 
 ---
-
-# Кейс 1: пример - подпись туристических документов
 
 <div class="grid grid-cols-2 gap-6 mt-4 text-sm">
 
@@ -466,6 +599,124 @@ signatures/
 
 ---
 
+## Кейс 1: что еще подсказывает агент
+
+<div class="mt-2 text-sm text-gray-300 leading-snug">
+Даже бытовой вопрос про поездку дает осмысленный результат: агент смотрит на уже собранный контекст и возвращает короткий список того, что еще не закрыто.
+</div>
+
+<img
+  src="ask_about_trip.png"
+  alt="Диалог с агентом о том, что осталось запланировать по поездке"
+  class="mt-3 mx-auto rounded-lg border border-white/10 shadow-lg max-h-[35vh] max-w-full w-auto object-contain"
+/>
+
+<div class="mt-3 rounded-lg border border-amber-500/30 bg-amber-900/15 p-3 text-sm text-amber-100 leading-snug">
+Главное замечание здесь - перелеты и слот уже подтверждены, а трансфер до места еще не продуман. Заодно агент напоминает про подтверждение проживания, буфер по времени и офлайн-контакты.
+</div>
+
+---
+
+## Кейс 1: а покататься получится?
+
+<div class="mt-2 text-sm text-gray-300 leading-snug">
+Еще один бытовой вопрос: спрашиваю у агента, получится ли покататься на лыжах в рамках командировки.
+</div>
+
+<img
+  src="ask_about_ski.png"
+  alt="Диалог с агентом о возможности покататься на лыжах"
+  class="mt-3 mx-auto rounded-lg border border-white/10 shadow-lg max-h-[44vh] max-w-full w-auto object-contain"
+/>
+
+---
+
+## Кейс 1: просим агента составить план
+
+<div class="grid grid-cols-2 gap-4 mt-3">
+
+<img
+  src="make_plan_1.png"
+  alt="Просим бота составить план — часть 1"
+  class="rounded-lg border border-white/10 shadow-lg max-h-[45vh] w-auto object-contain"
+/>
+
+<img
+  src="make_plan_2.png"
+  alt="Просим бота составить план — часть 2"
+  class="rounded-lg border border-white/10 shadow-lg max-h-[45vh] w-auto object-contain"
+/>
+
+</div>
+
+---
+
+<img
+  src="make_plan_result.png"
+  alt="Результат: план от агента"
+  class="mx-auto rounded-lg border border-white/10 shadow-lg max-h-[66vh] max-w-full w-auto object-contain"
+/>
+
+---
+
+# Кейс 1: напоминания через Heartbeat и Cron
+
+<div class="grid grid-cols-[0.9fr_1.1fr] gap-4 mt-2 items-start">
+
+<img
+  src="set_reminders_1.png"
+  alt="Диалог: просим агента поставить напоминания"
+  class="rounded-lg border border-white/10 shadow-lg max-h-[45vh] w-auto object-contain"
+/>
+
+<div class="flex flex-col gap-3">
+
+<div class="text-xs text-gray-400">Регулярная проверка — добавлена в HEARTBEAT.md:</div>
+
+<img
+  src="set_reminders_heartbeat.png"
+  alt="Diff: правило добавлено в HEARTBEAT.md"
+  class="rounded-lg border border-white/10 shadow-lg w-full object-contain"
+/>
+
+<div class="text-xs text-gray-400">Одноразовое напоминание — Cron Job на конкретную дату:</div>
+
+<img
+  src="set_reminders_cron.png"
+  alt="Cron Job: напоминание о регистрации на рейс"
+  class="rounded-lg border border-white/10 shadow-lg w-full object-contain"
+/>
+
+</div>
+
+</div>
+
+---
+
+# Главное: context offloading
+
+<div class="mt-4 text-gray-300 leading-relaxed">
+
+Агент сохранил план в файлы репозитория — и теперь этот контекст **живёт дольше, чем сессия чата**.
+
+</div>
+
+<v-clicks>
+
+- План конференции зафиксирован в структурированных файлах, а не потерян в истории переписки
+- Через дни или недели можно вернуться и задать уточняющий вопрос — агент найдёт контекст в файлах
+- Например: *«Я хочу послушать доклад X — я иду на него по плану?»*
+- Агент откроет сохранённый план, сверит со спикером и ответит — без повторного сбора информации
+- **Ключевая идея**: context offloading превращает одноразовый ответ в переиспользуемую базу знаний
+
+</v-clicks>
+
+<div class="mt-5 p-3 rounded-lg bg-cyan-900/15 border border-cyan-500/30 text-sm text-cyan-100">
+Файлы — это долгосрочная память агента. Чем больше контекста выгружено в структуру, тем полезнее агент со временем.
+</div>
+
+---
+
 <div class="grid grid-cols-[0.78fr_1.22fr] gap-4 items-start pt-1">
 
 <div class="rounded-lg border border-amber-500/30 bg-amber-900/15 p-3 text-sm leading-snug">
@@ -482,7 +733,7 @@ signatures/
   <img
     src="unsigned_document.png"
     alt="Неподписанный документ для хакатона"
-    class="mt-1 mx-auto rounded-lg border border-white/10 max-h-[47vh] w-auto"
+    class="mt-1 mx-auto rounded-lg border border-white/10 max-h-[60vh] w-auto"
   />
 </div>
 
@@ -516,7 +767,7 @@ signatures/
   <img
     src="signed_document.png"
     alt="Подписанный документ после обработки агентом"
-    class="mx-auto rounded-lg border border-white/10 max-h-[47vh] w-auto"
+    class="mx-auto rounded-lg border border-white/10 max-h-[60vh] w-auto"
   />
 </div>
 
@@ -536,6 +787,7 @@ signatures/
 - синхронизация репозитория перед правками
 - правка структуры и содержания слайдов
 - экспорт в PDF с корректными фонами
+- выгрузка субтитров из YouTube для подготовки материалов
 - подготовка коммита и push после подтверждения
 
 </v-clicks>
@@ -580,115 +832,90 @@ QR-код на Slidev
 
 ---
 
-# Кейс 2: репозитарий
+# Кейс 2: скилл для выгрузки с YouTube
+
+<div class="mt-4 grid grid-cols-[1.2fr_0.8fr] gap-6 items-start">
+
+<div>
+
+<div class="text-gray-300 leading-relaxed text-sm">
+Отдельный скилл извлекает субтитры из YouTube-видео и форматирует их в Markdown с кликабельными таймкодами. Полезно для подготовки слайдов по записям прошлых вебинаров.
+</div>
+
+<v-clicks>
+
+- использует `yt-dlp` для скачивания субтитров
+- поддержка языков: русский → английский → авто
+- дедупликация и склейка коротких сегментов в осмысленные фразы
+- на выходе — Markdown с таймкод-ссылками на YouTube
+
+</v-clicks>
+
+</div>
+
+<div class="p-3 rounded-lg bg-gray-800/60 text-xs">
 
 ```bash
-cd /root/.openclaw/workspace/slides
-git pull --rebase origin "$(git branch --show-current)"
-# правки в .md + assets
-bunx slidev export <deck.md> --output <deck.pdf> --timeout 60000 --per-slide
-git add -A && git commit -m "slides: update deck" && git push
+python3 .agents/skills/\
+  youtube-subtitles/\
+  extract_subtitles.py \
+  <YOUTUBE_URL> \
+  --output subtitles.md \
+  --lang ru
 ```
 
-<div class="mt-4 text-sm text-gray-400">
-Важный принцип: сначала согласование с автором, потом фиксация изменений в git.
+</div>
+
+</div>
+
+<div class="mt-4 rounded-lg border border-cyan-500/30 bg-cyan-900/15 p-3 text-sm text-cyan-100">
+Пример: субтитры первого вебинара (300 фраз с таймкодами) использовались как источник контекста при подготовке этих слайдов.
 </div>
 
 ---
 
-# Кейс 2: ценность
+# Кейс 2: реальные примеры работы со слайдами
 
-<v-clicks>
-
-- быстрее делается черновик и итерации по слайдам
-- ниже риск сломать структуру при массовых правках
-- прозрачная история изменений для командной работы
-- удобно масштабировать на серию вебинаров
-
-</v-clicks>
-
----
-
-# Кейс 3: документы и подпись
-
-<div class="mt-4 text-gray-300">
-Что автоматизируем:
-</div>
-
-<v-clicks>
-
-- извлечение данных из репозитория и карточек поездок/объектов
-- заполнение шаблонов документов по структуре формы
-- подстановка реквизитов и проверка обязательных полей
-- автоматическое подписание PDF эталонной подписью
-- сохранение финальной версии и фиксация изменений в git
-
-</v-clicks>
-
----
-
-# Кейс 3: пример потока
-
-<div class="mt-4 grid grid-cols-2 gap-6 text-sm">
-
-<div class="p-4 rounded-lg bg-gray-800/60">
-
-### Вход
-
-- "Заполни форму командировки"
-- "Собери PDF и подпиши"
-- "Проверь, что поля корректны"
-
-</div>
-
-<div class="p-4 rounded-lg bg-gray-800/60">
-
-### Действия агента
-
-1. синхронизация репозитория с данными
-2. чтение нужных реквизитов и проверка ограничений
-3. заполнение шаблона и генерация PDF
-4. подписание PDF и сохранение результата
-5. commit + push после подтверждения
-
-</div>
-
-</div>
-
-<div class="mt-4 text-gray-400 text-sm">
-Результат: меньше ручных ошибок и быстрее подготовка документов к отправке.
-</div>
-
----
-
-# Кейс 3: ценность и контроль
-
-<div class="grid grid-cols-3 gap-4 mt-6 text-sm">
+<div class="mt-4 grid grid-cols-3 gap-4 text-sm">
 
 <div class="p-4 rounded-lg bg-blue-900/25 border border-blue-500/30">
 
-### Скорость
+### 1. Рекап первой части
 
-Рутинное заполнение и подпись уходят в минуты, а не в долгую ручную сборку.
+- Cursor проанализировал слайды первого вебинара
+- Сгенерировал структуру рекапа для второй части
+- QR-коды на записи собраны из Telegram-поста автоматически
 
 </div>
 
 <div class="p-4 rounded-lg bg-emerald-900/25 border border-emerald-500/30">
 
-### Точность
+### 2. Субтитры с YouTube
 
-Данные берутся из структурированных источников, снижается риск опечаток.
-
-</div>
-
-<div class="p-4 rounded-lg bg-amber-900/25 border border-amber-500/30">
-
-### Аудит
-
-Версионирование и понятный журнал изменений упрощают проверку и откат.
+- Claude Code выгрузил субтитры двухчасового видео
+- Разбил на 300 осмысленных фраз с таймкодами
+- Ссылки с таймкодами расставлены в слайдах как источники
 
 </div>
 
+<div class="p-4 rounded-lg bg-purple-900/25 border border-purple-500/30">
+
+### 3. Архитектурный блок
+
+- Cursor прочитал исходный код OpenClaw
+- На основе анализа сгенерировал слайды про архитектуру
+- Agentic loop, память, skills — всё извлечено из кода
+
+</div>
+
+</div>
+
+<div class="mt-4 rounded-lg border border-cyan-500/30 bg-cyan-900/15 p-3 text-sm text-cyan-100">
+Все три кейса — реальная работа при подготовке этих слайдов. Cursor и Claude Code использовались как основные инструменты.
+</div>
+
+<div class="mt-2 text-xs text-gray-500">
+* Этот слайд полностью сгенерирован агентом и оставлен без правок — как пример результата.
 </div>
 
 ---
@@ -709,9 +936,13 @@ git add -A && git commit -m "slides: update deck" && git push
 
 </v-clicks>
 
+<div class="mt-4 rounded-lg border border-amber-500/30 bg-amber-900/15 p-3 text-sm text-amber-100">
+Важно: боту нужен отдельный почтовый ящик — не ваш личный. Я использую выделенный Gmail-аккаунт, на который настроены пересылки и доступы.
+</div>
+
 ---
 
-# Кейс 4: пример потока
+# Кейс 4: пример работы с почтой
 
 <div class="mt-4 grid grid-cols-2 gap-6 text-sm">
 
@@ -744,19 +975,117 @@ git add -A && git commit -m "slides: update deck" && git push
 
 ---
 
-# Кейс 5: веб-автоматизация личных кабинетов
+<div class="text-sm font-semibold">Кейс 4: как подключить Gmail</div>
+
+<div class="mt-1 grid grid-cols-[1.1fr_0.9fr] gap-4" style="font-size: 0.6rem; line-height: 1.4;">
+
+<div>
+
+<div class="text-gray-300 mb-1">Подключение через <code>gog</code> + Gmail Pub/Sub + webhook:</div>
+
+```bash {style="font-size:0.55rem;line-height:1.3"}
+# 1. Зависимости: gcloud + tailscale + gog
+
+# 2. Авторизация Google Cloud
+gcloud auth login --no-launch-browser
+gcloud config set project YOUR_PROJECT_ID
+gcloud services enable \
+  gmail.googleapis.com pubsub.googleapis.com
+
+# 3. OAuth Desktop client → client_secret.json
+gog auth credentials ~/client_secret.json
+gog auth add you@gmail.com --manual
+
+# 4. Hooks в ~/.openclaw/openclaw.json
+# hooks.enabled=true, presets=["gmail"]
+
+# 5. Мастер настройки
+openclaw webhooks gmail setup \
+  --account you@gmail.com
+
+# 6. Запуск
+openclaw webhooks gmail run
+```
+
+</div>
+
+<div class="flex flex-col gap-2">
+
+<div class="p-2 rounded-lg bg-emerald-900/25 border border-emerald-500/30">
+
+**Push вместо polling**
+
+Gmail Pub/Sub присылает события о новых письмах мгновенно. Не нужен cron — меньше расход токенов.
+
+</div>
+
+<div class="p-2 rounded-lg bg-gray-800/60">
+
+**Что нужно**
+
+- Google Cloud проект + OAuth Desktop client
+- `gcloud` CLI + `gog` CLI + `tailscale`
+- Tailscale Funnel как публичный HTTPS endpoint
+
+</div>
+
+<div class="p-2 rounded-lg bg-amber-900/20 border border-amber-500/30 text-amber-100">
+
+**На Linux** зависимости ставятся вручную. Wizard OpenClaw их не устанавливает — только настраивает конфиг и watch.
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# Кейс 5: генерация изображений
+
+<div class="mt-3 grid grid-cols-2 gap-5 text-sm">
+
+<div>
 
 <v-clicks>
 
-- заполнение сложных веб-форм (например, визовые анкеты)
-- проверка отпусков и сверка с датами поездок в HR-системах
-- поиск данных в кабинетах и перенос в структурированный репозиторий
-- работа через Browser Relay с продолжением с места остановки
+- Можно подключить разные генераторы — я использую **Imagen (Nano Banana 2)**
+- Подключается при установке OpenClaw — нужен ключ **Google Cloud**
+- Референсы можно кидать **прямо в чат с ботом** — он их запомнит
+- Через API доступна генерация с **несколькими референсами** одновременно (в веб-интерфейсе Google — нельзя)
+- **Итеративные правки**: уточняем содержимое шаг за шагом, не начиная с нуля
 
 </v-clicks>
 
-<div class="mt-6 text-sm text-gray-400">
-Польза: меньше ручных кликов и ниже риск пропустить обязательные поля.
+</div>
+
+<div>
+
+<div class="p-3 rounded-lg bg-amber-900/20 border border-amber-500/30 text-amber-100 text-xs leading-relaxed">
+
+**Про доступ из России:** Google AI Studio и Vertex AI недоступны из РФ и агрессивно блокируют средства обхода. Но OpenClaw развёрнут на иностранном сервере — для него таких ограничений нет. Это удобная точка входа к генерации через Google API.
+
+</div>
+
+<div class="mt-3 p-3 rounded-lg bg-gray-800/60 text-xs leading-relaxed">
+
+**Workflow с референсами:**
+1. Кидаем боту аватар, фото, логотипы
+2. Агент сохраняет их в память
+3. При генерации подставляет нужные образы без повторных объяснений
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# Кейс 5: примеры генерации
+
+<div class="mt-4 text-sm text-gray-400">
+Примеры будут добавлены
 </div>
 
 ---
@@ -770,14 +1099,6 @@ git add -A && git commit -m "slides: update deck" && git push
 ### Сети и роутер
 
 Подбор доменов сервисов под правила обхода блокировок.
-
-</div>
-
-<div class="p-4 rounded-lg bg-emerald-900/25 border border-emerald-500/30">
-
-### Медиа
-
-Генерация изображений и быстрые креативы для задач и постов.
 
 </div>
 
@@ -827,4 +1148,82 @@ git add -A && git commit -m "slides: update deck" && git push
 
 <div class="mt-8 text-sm text-gray-400">
 Дальше можно расширять библиотеку кейсов под вашу реальную работу.
+</div>
+
+---
+
+# Спасибо за внимание!
+
+<div class="text-gray-400 mb-2">Готов ответить на вопросы</div>
+
+<div class="grid grid-cols-2 gap-2 text-xs">
+
+<div class="p-2 rounded-lg bg-red-900/25 border border-red-500/30 flex items-center gap-3">
+
+<img
+  src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fyoutu.be%2F0TQFhuv1PVA"
+  alt="QR-код на YouTube запись первого вебинара"
+  class="w-16 h-16 rounded-lg bg-white p-1.5 shrink-0"
+/>
+
+<div>
+<div class="text-white font-semibold text-sm">YouTube</div>
+<a href="https://youtu.be/0TQFhuv1PVA" target="_blank">Запускаем и изучаем OpenClaw</a>
+</div>
+
+</div>
+
+<div class="p-2 rounded-lg bg-blue-900/25 border border-blue-500/30 flex items-center gap-3">
+
+<img
+  src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Frutube.ru%2Fvideo%2Fb3e60ebe06377e530db737d6a0db8cdd%2F"
+  alt="QR-код на RuTube запись первого вебинара"
+  class="w-16 h-16 rounded-lg bg-white p-1.5 shrink-0"
+/>
+
+<div>
+<div class="text-white font-semibold text-sm">RuTube</div>
+<a href="https://rutube.ru/video/b3e60ebe06377e530db737d6a0db8cdd/" target="_blank">Запись вебинара</a>
+</div>
+
+</div>
+
+<div class="p-2 rounded-lg bg-sky-900/25 border border-sky-500/30 flex items-center gap-3">
+
+<img
+  src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Ft.me%2Frobofuture%2F129"
+  alt="QR-код на Telegram запись первого вебинара"
+  class="w-16 h-16 rounded-lg bg-white p-1.5 shrink-0"
+/>
+
+<div>
+<div class="text-white font-semibold text-sm">Telegram</div>
+<a href="https://t.me/robofuture/129" target="_blank">Видео в канале RoboFuture</a>
+</div>
+
+</div>
+
+<div class="p-2 rounded-lg bg-emerald-900/25 border border-emerald-500/30 flex items-center gap-3">
+
+<img
+  src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Ft.me%2Frobofuture%2F128"
+  alt="QR-код на слайды первого вебинара"
+  class="w-16 h-16 rounded-lg bg-white p-1.5 shrink-0"
+/>
+
+<div>
+<div class="text-white font-semibold text-sm">Слайды</div>
+<a href="https://t.me/robofuture/128" target="_blank">openclaw.pdf</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="mt-3 flex items-center justify-center gap-4">
+  <img src="/krestnikov_big.png" class="w-12 h-12 rounded-full" />
+  <div class="text-left">
+    <div class="text-white font-semibold text-sm">Константин Крестников</div>
+    <div class="text-xs text-gray-400">Управляющий директор, Сбер • Лид команды GigaChain</div>
+  </div>
 </div>
