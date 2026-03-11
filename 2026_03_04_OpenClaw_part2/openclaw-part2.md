@@ -123,6 +123,12 @@ transition: slide-left
 - настроили агента и каналы
 - сделали первый запуск и живое демо
 
+<div class="mt-3 text-xs text-blue-200 leading-snug">
+Часть 1:
+<a href="https://youtu.be/0TQFhuv1PVA?t=686" target="_blank" class="underline">00:11:26 - сервер</a>,
+<a href="https://youtu.be/0TQFhuv1PVA?t=1388" target="_blank" class="underline">00:23:08 - Telegram</a>
+</div>
+
 </div>
 
 <div class="p-4 rounded-lg bg-emerald-900/25 border border-emerald-500/30">
@@ -133,6 +139,13 @@ transition: slide-left
 - память на Markdown-файлах
 - skills, heartbeat и cron
 
+<div class="mt-3 text-xs text-emerald-200 leading-snug">
+Часть 1:
+<a href="https://youtu.be/0TQFhuv1PVA?t=1809" target="_blank" class="underline">00:30:09 - архитектура</a>,
+<a href="https://youtu.be/0TQFhuv1PVA?t=2113" target="_blank" class="underline">00:35:13 - память</a>,
+<a href="https://youtu.be/0TQFhuv1PVA?t=2657" target="_blank" class="underline">00:44:17 - skills/MCP</a>
+</div>
+
 </div>
 
 <div class="p-4 rounded-lg bg-purple-900/25 border border-purple-500/30">
@@ -142,6 +155,12 @@ transition: slide-left
 - показал схему через `gpt2giga`
 - попробовали OpenClaw на GigaChat
 - сравнили с OpenAI-совместимым провайдером
+
+<div class="mt-3 text-xs text-purple-200 leading-snug">
+Часть 1:
+<a href="https://youtu.be/0TQFhuv1PVA?t=4795" target="_blank" class="underline">01:19:55 - схема GPT2GIGA</a>,
+<a href="https://youtu.be/0TQFhuv1PVA?t=5237" target="_blank" class="underline">01:27:17 - настройка OpenClaw</a>
+</div>
 
 </div>
 
@@ -215,6 +234,28 @@ transition: slide-left
 <a href="https://t.me/robofuture/132" target="_blank">openclaw.pdf</a>
 </div>
 
+</div>
+
+</div>
+
+<div class="mt-5 grid grid-cols-2 gap-3 text-xs">
+
+<div class="rounded-lg border border-white/10 bg-white/5 p-3">
+  <div class="text-gray-400 uppercase tracking-wide mb-1">Быстрые переходы</div>
+  <div><a href="https://youtu.be/0TQFhuv1PVA?t=686" target="_blank" class="underline">00:11:26 - установка сервера</a></div>
+  <div><a href="https://youtu.be/0TQFhuv1PVA?t=1388" target="_blank" class="underline">00:23:08 - Telegram и первый запуск</a></div>
+  <div><a href="https://youtu.be/0TQFhuv1PVA?t=1809" target="_blank" class="underline">00:30:09 - архитектура и agentic loop</a></div>
+  <div><a href="https://youtu.be/0TQFhuv1PVA?t=2113" target="_blank" class="underline">00:35:13 - память в файлах</a></div>
+  <div><a href="https://youtu.be/0TQFhuv1PVA?t=2657" target="_blank" class="underline">00:44:17 - skills vs MCP</a></div>
+</div>
+
+<div class="rounded-lg border border-white/10 bg-white/5 p-3">
+  <div class="text-gray-400 uppercase tracking-wide mb-1">Темы, которые продолжаем тут</div>
+  <div><a href="https://youtu.be/0TQFhuv1PVA?t=3466" target="_blank" class="underline">00:57:46 - heartbeat и cron</a></div>
+  <div><a href="https://youtu.be/0TQFhuv1PVA?t=4338" target="_blank" class="underline">01:12:18 - документы и браузер</a></div>
+  <div><a href="https://youtu.be/0TQFhuv1PVA?t=4795" target="_blank" class="underline">01:19:55 - GPT2GIGA и GigaChat</a></div>
+  <div><a href="https://youtu.be/0TQFhuv1PVA?t=6192" target="_blank" class="underline">01:43:12 - GitHub backup и skills</a></div>
+  <div><a href="https://youtu.be/0TQFhuv1PVA?t=6308" target="_blank" class="underline">01:45:08 - Slidev и работа со слайдами</a></div>
 </div>
 
 </div>
@@ -683,6 +724,12 @@ signatures/
 
 </div>
 
+<div class="mt-3 text-xs text-gray-400">
+Первая часть по этой теме:
+<a href="https://youtu.be/0TQFhuv1PVA?t=2681" target="_blank" class="underline">00:44:41 - кроны</a>,
+<a href="https://youtu.be/0TQFhuv1PVA?t=3466" target="_blank" class="underline">00:57:46 - heartbeat</a>
+</div>
+
 ---
 
 # Главное: context offloading
@@ -705,6 +752,12 @@ signatures/
 
 <div class="mt-5 p-3 rounded-lg bg-cyan-900/15 border border-cyan-500/30 text-sm text-cyan-100">
 Файлы — это долгосрочная память агента. Чем больше контекста выгружено в структуру, тем полезнее агент со временем.
+</div>
+
+<div class="mt-3 text-xs text-gray-400">
+Первая часть по этой теме:
+<a href="https://youtu.be/0TQFhuv1PVA?t=2113" target="_blank" class="underline">00:35:13 - где лежит память</a>,
+<a href="https://youtu.be/0TQFhuv1PVA?t=2490" target="_blank" class="underline">00:41:30 - поиск по памяти</a>
 </div>
 
 ---
@@ -783,9 +836,14 @@ signatures/
 
 </v-clicks>
 
+<div class="mt-5 text-xs text-gray-400">
+Первая часть по смежной теме:
+<a href="https://youtu.be/0TQFhuv1PVA?t=6308" target="_blank" class="underline">01:45:08 - Slidev и агент для презентаций</a>
+</div>
+
 ---
 
-# Кейс 2: что такое Slidev
+# Кейс 2: что такое Slidev!
 
 <div class="mt-6 grid grid-cols-[1.6fr_0.9fr] gap-8 items-start">
 
@@ -797,6 +855,12 @@ signatures/
 
 <div class="mt-4 text-gray-300 leading-relaxed">
 Slidev - это инструмент для создания презентаций для разработчиков на базе Markdown, Vite и Vue. Слайды удобно хранить в репозитории, быстро править как код, дополнять компонентами и экспортировать в PDF.
+</div>
+
+<div class="mt-4 space-y-3 text-sm leading-relaxed text-gray-300">
+  <div><span class="font-semibold text-emerald-300">Markdown</span> - это простой текстовый формат разметки. В нем удобно писать заголовки, списки, картинки, ссылки и код, не отвлекаясь на сложный визуальный редактор.</div>
+  <div><span class="font-semibold text-emerald-300">Vite</span> - это быстрый dev-сервер и сборщик фронтенда. Он почти мгновенно подхватывает изменения в файле, поэтому презентацию можно править и сразу видеть результат на экране.</div>
+  <div><span class="font-semibold text-emerald-300">Vue</span> - это фреймворк для интерфейсов. Благодаря ему в слайды можно вставлять компоненты, управлять логикой отображения, делать интерактив и собирать более живую подачу, чем в обычном PDF.</div>
 </div>
 
 <div class="mt-4 text-sm text-gray-400">
@@ -896,6 +960,12 @@ QR-код на Slidev
 
 <div class="mt-4 rounded-lg border border-cyan-500/30 bg-cyan-900/15 p-3 text-sm text-cyan-100">
 Все три кейса — реальная работа при подготовке этих слайдов. Cursor и Claude Code использовались как основные инструменты.
+</div>
+
+<div class="mt-3 text-xs text-gray-400">
+См. в части 1:
+<a href="https://youtu.be/0TQFhuv1PVA?t=6192" target="_blank" class="underline">01:43:12 - backup skills в GitHub</a>,
+<a href="https://youtu.be/0TQFhuv1PVA?t=6308" target="_blank" class="underline">01:45:08 - живой кейс со Slidev</a>
 </div>
 
 <div class="mt-2 text-xs text-gray-500">
