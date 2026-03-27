@@ -133,29 +133,38 @@ TODO: заменить QR-код на скриншот графика скачи
 
 # К универсальным агентам пришли почти все
 
-<div class="mt-6">
+<div class="grid grid-cols-[1fr_auto] gap-6 mt-4">
+
+<div>
 
 <v-clicks>
 
 - С начала 2025 года мы говорили об универсальных агентах
-- Сейчас это уже **мейнстрим** - от стартапов до Big Tech
-- Но **самоулучшающиеся агенты** - это следующий рубеж
+- Сейчас это уже **мейнстрим** — от стартапов до Big Tech
+- Но **самоулучшающиеся агенты** — это следующий рубеж
 
 </v-clicks>
 
-</div>
-
 <v-click>
 
-<div class="mt-8 p-6 bg-blue-900/30 rounded-xl border border-blue-500/30">
+<div class="mt-6 p-4 bg-blue-900/30 rounded-xl border border-blue-500/30">
 
-### Сегодня я покажу вам то, что ждет нас за поворотом в ближайший год
+### Сегодня я покажу вам то, что ждет нас за поворотом
 
 Агенты, которые сами себя улучшают, меняют свой код, исследуют мир и принимают решения о собственном развитии.
 
 </div>
 
 </v-click>
+
+</div>
+
+<div class="flex flex-col items-center">
+  <img src="/old_post.png" class="h-64 rounded-lg border border-gray-700 shadow-lg" />
+  <div class="text-xs text-gray-500 mt-2">Год назад мы уже об этом говорили</div>
+</div>
+
+</div>
 
 ---
 
@@ -229,26 +238,26 @@ while True:
 
 <div class="flex flex-col items-center">
   <div class="w-24 h-24 rounded-full bg-blue-500/20 border-2 border-blue-400 flex items-center justify-center text-3xl">1</div>
-  <div class="mt-3 font-semibold">Агент работает</div>
-  <div class="text-sm text-gray-400">Свежий контекст, задача</div>
+  <div class="mt-3 font-semibold">Свежий контекст</div>
+  <div class="text-sm text-gray-400">Harness (CLI) берёт задачу из плана</div>
 </div>
 
 <div class="flex flex-col items-center">
   <div class="w-24 h-24 rounded-full bg-green-500/20 border-2 border-green-400 flex items-center justify-center text-3xl">2</div>
-  <div class="mt-3 font-semibold">Анализ результатов</div>
-  <div class="text-sm text-gray-400">Что получилось, что нет</div>
+  <div class="mt-3 font-semibold">Агент работает</div>
+  <div class="text-sm text-gray-400">Реализует, тестирует, коммитит</div>
 </div>
 
 <div class="flex flex-col items-center">
   <div class="w-24 h-24 rounded-full bg-yellow-500/20 border-2 border-yellow-400 flex items-center justify-center text-3xl">3</div>
-  <div class="mt-3 font-semibold">Самоизменение</div>
-  <div class="text-sm text-gray-400">Агент меняет свой код</div>
+  <div class="mt-3 font-semibold">Backpressure</div>
+  <div class="text-sm text-gray-400">Тесты, линтер, билд отклоняют брак</div>
 </div>
 
 <div class="flex flex-col items-center">
   <div class="w-24 h-24 rounded-full bg-purple-500/20 border-2 border-purple-400 flex items-center justify-center text-3xl">4</div>
-  <div class="mt-3 font-semibold">Новое поколение</div>
-  <div class="text-sm text-gray-400">Память через файлы</div>
+  <div class="mt-3 font-semibold">Новая итерация</div>
+  <div class="text-sm text-gray-400">Память через файлы, план обновлён</div>
 </div>
 
 </div>
@@ -258,18 +267,192 @@ while True:
 
 <div class="mt-4 p-4 bg-gray-800/50 rounded-xl border border-gray-700 text-sm">
 
-**Паттерн оказался настолько фундаментальным, что его независимо переоткрывают** - Meta (HyperAgents), и другие. Anima - наша реализация этого паттерна для открытых задач.
+**Ключевая идея:** тупой bash-цикл + умный агент + файловая система как состояние = автономная разработка. Ваша роль — **инженер среды**, а не исполнитель. "Let Ralph Ralph."
 
 </div>
 
 </v-click>
 
-<div class="mt-2 text-xs text-gray-500 text-center">
-Geoffrey Huntley - ghuntley.com/loop | Реализация - github.com/snarktank/ralph | Вебинар Димы Лабазкина (TBD)
+<div class="mt-2 flex justify-between items-center">
+  <div class="text-xs text-gray-500">Geoffrey Huntley — ghuntley.com/loop | Ralph Playbook — claytonfarr.github.io/ralph-playbook | Обучение — github.com/labdmitriy/build-your-own-coding-agent</div>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Fclaytonfarr.github.io%2Fralph-playbook%2F" class="h-14" />
 </div>
 
 <!--
-Ralph Loop - это паттерн, который назвал и формализовал Geoffrey Huntley. Суть: bash-цикл, свежий контекст LLM каждую итерацию, память через файлы (git, progress.txt, prd.json). Паттерн оказался настолько фундаментальным, что его независимо переоткрывают и Meta в HyperAgents, и другие. Anima - это наша реализация Ralph Loop, но для открытых задач вместо конкретного PRD. Anima прямо построена на идеях Ralph Loop.
+Ralph Loop — паттерн, формализованный Geoffrey Huntley. Суть: bash-цикл (outer loop) вызывает harness/CLI (inner loop) с задачей из плана. Каждая итерация — свежий контекст, агент выбирает задачу, реализует, прогоняет тесты (backpressure), коммитит, обновляет план. Память между поколениями — через файлы в репо. Ralph Playbook (Clayton Farr, 909 звёзд) — наиболее детальное руководство по этому паттерну: спецификации → план → backpressure → одна задача на итерацию. Ключевые концепции: "Let Ralph Ralph", "Move Outside the Loop", управление контекстным окном ("умная зона" 40-60%).
+-->
+
+---
+
+# Как реализовать простейший Ralph Loop
+
+<div class="mt-4">
+
+```bash
+#!/bin/bash
+while true; do
+  claude --print "Сделай хорошо"
+done
+```
+
+</div>
+
+<v-click>
+
+<div class="mt-2 p-3 bg-gray-800/50 rounded-xl border border-gray-700 text-sm">
+
+**Это всё.** Бесконечный цикл + свежий контекст LLM + память через файлы в репозитории. Каждая итерация — новое поколение агента, которое видит результаты предыдущего.
+
+</div>
+
+</v-click>
+
+<!--
+Простейшая реализация Ralph Loop — это буквально bash-скрипт с бесконечным циклом. Claude Code каждый раз получает свежий контекст, читает файлы проекта (включая progress.md от предыдущих поколений), вносит улучшения и коммитит. Ключевой момент — память между поколениями реализуется через обычные файлы в репозитории.
+-->
+
+---
+
+# Outer Loop как сон
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div>
+
+### Мозг
+
+<div class="text-sm mt-2">
+
+<v-clicks>
+
+- **День** — синапсы усиливаются, мозг "разогревается"
+- Без сна всё сливается — галлюцинации, потеря различий
+- **Сон** — равномерное "остывание" всех синапсов
+- Хитрость: запоминаем конкретно, забываем равномерно
+- Важное остаётся сильнее окружающего
+
+</v-clicks>
+
+</div>
+
+</div>
+
+<div>
+
+### Агент
+
+<div class="text-sm mt-2">
+
+<v-clicks>
+
+- **Inner loop** — контекст заполняется, "шум" растёт
+- Без перезапуска — галлюцинации, потеря фокуса
+- **Outer loop** — сброс контекста, "сон" агента
+- Хитрость: забываем контекст, но файлы (память) остаются
+- Важное сохранено в репо, шум стёрт
+
+</v-clicks>
+
+</div>
+
+</div>
+
+</div>
+
+<v-click>
+
+<div class="mt-4 p-3 bg-gray-800/50 rounded-xl border border-gray-700 text-sm">
+
+**Гипотеза синаптического гомеостаза (SHY):** суммарная сила синапсов после сна возвращается к исходному состоянию, но относительный вес продолжает определяться вчерашними впечатлениями. Outer loop делает то же самое — сбрасывает контекст, но сохраняет результаты в файлах.
+
+</div>
+
+</v-click>
+
+<div class="mt-2 text-xs text-gray-500">
+Николай Кукушкин — «Хлопок одной ладонью. Как неживая природа породила человеческий разум»
+</div>
+
+<!--
+Красивая аналогия между outer loop и сном. По гипотезе синаптического гомеостаза (SHY), во время бодрствования синапсы усиливаются от каждого сигнала, и без сна мозг теряет способность различать важное от неважного (галлюцинации). Сон — равномерное ослабление всех синапсов, но важные связи остаются относительно сильнее. Точно так же inner loop агента накапливает контекст до потери фокуса. Outer loop — это "сон": полный сброс контекста, но файлы в репо (= долговременная память) сохраняют результаты. Запоминаем конкретно (файлы), забываем равномерно (контекст). Цитата из книги Кукушкина "Хлопок одной ладонью".
+-->
+
+---
+
+# Ouroboros — тот же Ralph Loop, только с нуля
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div>
+
+### Ralph Loop + harness
+
+```bash
+#!/bin/bash
+while true; do
+  claude --print "Сделай хорошо"
+done
+```
+
+<v-click>
+
+<div class="mt-4 text-sm text-gray-400">
+
+- Harness берёт на себя всё: tools, контекст, безопасность
+- Память — через файлы в репо + CLAUDE.md
+- **4 строки, готово за 5 минут**
+
+</div>
+
+</v-click>
+
+</div>
+
+<div>
+
+### Ouroboros — harness с нуля
+
+<div class="text-sm">
+
+```
+ouroboros/loop.py      — свой tool loop
+ouroboros/llm.py       — свой LLM-клиент
+ouroboros/context.py   — своё управление контекстом
+ouroboros/memory.py    — своя система памяти
+ouroboros/tools/*.py   — свои инструменты
+supervisor/*           — свой оркестратор
+```
+
+</div>
+
+<v-click>
+
+<div class="mt-4 text-sm text-gray-400">
+
+- Тысячи строк Python для того же паттерна
+- Полный контроль, но хрупкость и поддержка
+- + "конституция", "сознание", Telegram-бот
+
+</div>
+
+</v-click>
+
+</div>
+
+</div>
+
+<v-click>
+
+<div class="mt-3 p-3 bg-gray-800/50 rounded-xl border border-gray-700 text-sm text-center">
+
+**Принцип идентичен:** цикл → свежий контекст → агент работает → память через файлы → самомодификация через git → повтор. Ouroboros переизобретает harness — Ralph Loop использует готовый.
+
+</div>
+
+</v-click>
+
+<!--
+Ouroboros (github.com/razzant/ouroboros) — open-source самомодифицирующийся агент на Python, ~440 звёзд. Реализует Ralph Loop с нуля: собственный tool loop, LLM-клиент через OpenRouter, система памяти, мультимодельное ревью. Ключевой поинт слайда: зачем писать тысячи строк кастомного кода, если harness (Claude Code) уже всё умеет? 4 строки bash дают тот же результат.
 -->
 
 ---
@@ -328,53 +511,58 @@ Meta выпустила HyperAgents - это тоже самоулучшающи
 
 # Anima - эксперимент
 
-<div class="mt-4">
+<div class="mt-2">
 
-### Максимально простая система
+### Три уровня циклов
 
 </div>
 
-<div class="grid grid-cols-3 gap-6 mt-6">
+<div class="grid grid-cols-3 gap-4 mt-4">
 
-<div class="p-4 bg-gray-800/50 rounded-xl border border-gray-700">
-  <div class="text-blue-400 font-bold text-lg mb-2">prompt.md</div>
-  <div class="text-sm text-gray-300">Системный промпт агента</div>
+<div class="p-4 bg-blue-900/20 rounded-xl border border-blue-500/30">
+  <div class="text-blue-400 font-bold text-lg mb-2">Inner Loop</div>
+  <div class="text-sm text-gray-300 font-semibold">Claude Code (CLI)</div>
+  <div class="text-xs text-gray-400 mt-1">Harness: tools, контекст, субагенты, файлы. Одна итерация = одна задача.</div>
 </div>
 
-<div class="p-4 bg-gray-800/50 rounded-xl border border-gray-700">
-  <div class="text-green-400 font-bold text-lg mb-2">goal.md</div>
-  <div class="text-sm text-gray-300">"Стань мыслящим существом"</div>
+<div class="p-4 bg-green-900/20 rounded-xl border border-green-500/30">
+  <div class="text-green-400 font-bold text-lg mb-2">Outer Loop</div>
+  <div class="text-sm text-gray-300 font-semibold">loop.sh</div>
+  <div class="text-xs text-gray-400 mt-1">Bash-цикл: перезапуск CLI со свежим контекстом. Поколения агента.</div>
 </div>
 
-<div class="p-4 bg-gray-800/50 rounded-xl border border-gray-700">
-  <div class="text-purple-400 font-bold text-lg mb-2">loop.sh</div>
-  <div class="text-sm text-gray-300">Бесконечный цикл на bash</div>
+<div class="p-4 bg-purple-900/20 rounded-xl border border-purple-500/30">
+  <div class="text-purple-400 font-bold text-lg mb-2">Meta Loop</div>
+  <div class="text-sm text-gray-300 font-semibold">meta_loop.sh</div>
+  <div class="text-xs text-gray-400 mt-1">Outer loop второго порядка: меняет промпты, цели, параметры самого loop.sh.</div>
 </div>
 
 </div>
 
 <v-click>
 
-<div class="mt-8 text-center">
-
-### Claude Code в бесконечном цикле + одна инструкция
-
-Дальше я почти не вмешивался.
-
+<div class="mt-4 p-3 bg-gray-800/50 rounded-xl border border-gray-700">
+<div class="flex items-center gap-4">
+  <div class="text-3xl">👤</div>
+  <div>
+    <div class="font-semibold">Man on the Middle</div>
+    <div class="text-sm text-gray-400">Человек не в центре, а <b>приглядывает</b>. Наблюдает за поколениями, корректирует среду, но не вмешивается в работу агента напрямую.</div>
+  </div>
+</div>
 </div>
 
 </v-click>
 
 <v-click>
 
-<div class="mt-4 flex justify-center gap-8 text-sm text-gray-400">
+<div class="mt-2 flex justify-center gap-8 text-sm text-gray-400">
   <span>github.com/Rai220/anima</span>
 </div>
 
 </v-click>
 
 <!--
-Anima - это максимально простая система на базе идей Ralph Loop. Три файла: системный промпт, цель и bash-скрипт бесконечного цикла. Одна инструкция - "стань мыслящим существом". Claude Code запускается в бесконечном цикле, и дальше агент сам решает, что ему делать. Я почти не вмешивался в процесс.
+Архитектура Anima — три уровня циклов. Inner loop — это Claude Code CLI (harness), который делает всю тяжёлую работу: tools, контекст, субагенты. Outer loop — loop.sh, bash-цикл, перезапускающий CLI со свежим контекстом каждую итерацию (= поколение). Meta loop — meta_loop.sh, outer loop второго порядка, который может менять промпты, цели и параметры самого loop.sh. Человек — "man on the middle" (не in the middle): приглядывает за процессом, корректирует среду при необходимости, но не вмешивается в работу агента напрямую.
 -->
 
 ---
@@ -834,6 +1022,8 @@ AI-ассистент в роли **CAITO** для ритейл-компании
 - [Anima](https://github.com/Rai220/anima)
 - [Интерактивный отчет](https://rai220.github.io/anima/generation_13/index.html)
 - [HyperAgents (Meta)](https://github.com/facebookresearch/Hyperagents)
+- [Ralph Playbook](https://claytonfarr.github.io/ralph-playbook/)
+- [Build Your Own Coding Agent](https://github.com/labdmitriy/build-your-own-coding-agent) — обучение
 
 ### Скачивания
 
